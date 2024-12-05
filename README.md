@@ -1,5 +1,5 @@
 # Aplicativo para Agendamento de Atividades Esportivas
-
+## Feito por: Thaian Ramalho, Ayrton Rodrigues e Samir Ribeiro
 # Guia: Como Clonar o Repositório e Abrir no Android Studio
 
 ## 1. Pré-requisitos
