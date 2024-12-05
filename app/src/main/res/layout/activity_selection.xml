@@ -14,5 +14,5 @@
         android:id="@+id/bookButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Book" />
+        android:text="Reservar" />
 </LinearLayout>

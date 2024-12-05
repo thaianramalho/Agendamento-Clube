@@ -9,4 +9,16 @@
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dias indisponíveis para agendamento:"
+        android:textSize="18sp"
+        android:paddingTop="16dp" />
+
+    <ListView
+        android:id="@+id/unavailableDatesListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

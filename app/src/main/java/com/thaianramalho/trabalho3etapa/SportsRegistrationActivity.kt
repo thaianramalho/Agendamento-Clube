@@ -36,7 +36,7 @@ class SportsRegistrationActivity : AppCompatActivity() {
                 )
 
                 if (cursor.moveToFirst()) {
-                    Toast.makeText(this, "Sport already exists", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "O esporte já existe", Toast.LENGTH_SHORT).show()
                 } else {
                     cursor.close()
                     val values = ContentValues().apply {
@@ -44,14 +44,14 @@ class SportsRegistrationActivity : AppCompatActivity() {
                     }
                     val newRowId = db.insert("sports", null, values)
                     if (newRowId != -1L) {
-                        Toast.makeText(this, "Sport registered successfully", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Esporte registrado com sucesso", Toast.LENGTH_SHORT).show()
                     } else {
-                        Toast.makeText(this, "Failed to register sport", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Falha ao registrar esporte", Toast.LENGTH_SHORT).show()
                     }
                 }
                 cursor.close()
             } else {
-                Toast.makeText(this, "Please fill the sport name", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Por favor, preencha o nome do esporte", Toast.LENGTH_SHORT).show()
             }
         }
     }

@@ -2,7 +2,10 @@ package com.thaianramalho.trabalho3etapa
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.CalendarView
+import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.text.SimpleDateFormat
@@ -28,7 +31,7 @@ class CalendarActivity : AppCompatActivity() {
                 intent.putExtra("selectedDate", selectedDate)
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "Date is already booked", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "A data já está reservada", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -51,6 +54,7 @@ class CalendarActivity : AppCompatActivity() {
         cursor.close()
         return isAvailable
     }
+
 
     private fun markOccupiedDates(calendarView: CalendarView) {
         val db = dbHelper.readableDatabase
@@ -77,8 +81,10 @@ class CalendarActivity : AppCompatActivity() {
             val day = calendar.get(Calendar.DAY_OF_MONTH)
             val month = calendar.get(Calendar.MONTH)
             val year = calendar.get(Calendar.YEAR)
-            // Mark the date as occupied (this will depend on the specific calendar library you are using)
-            // For example, you might change the background color of the date
         }
+
+        val listView = findViewById<ListView>(R.id.unavailableDatesListView)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, bookedDates)
+        listView.adapter = adapter
     }
 }

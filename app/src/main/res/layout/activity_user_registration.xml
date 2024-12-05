@@ -9,42 +9,46 @@
         android:id="@+id/cpfEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="CPF" />
+        android:hint="CPF"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/nameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name" />
+        android:hint="Nome" />
 
     <EditText
         android:id="@+id/phoneEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Phone" />
+        android:hint="Telefone"
+        android:inputType="phone" />
 
     <EditText
         android:id="@+id/emailEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email" />
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/birthdateEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Birthdate" />
+        android:hint="Data de Nascimento"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:hint="Senha"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/registerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register" />
+        android:text="Registrar" />
 </LinearLayout>

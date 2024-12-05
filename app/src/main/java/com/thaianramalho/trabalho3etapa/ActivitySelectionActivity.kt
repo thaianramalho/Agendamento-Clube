@@ -36,13 +36,13 @@ class ActivitySelectionActivity : AppCompatActivity() {
                 }
                 val newRowId = db.insert("bookings", null, values)
                 if (newRowId != -1L) {
-                    Toast.makeText(this, "Booking successful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Agendamento realizado com sucesso", Toast.LENGTH_SHORT).show()
                     finish() // Go back to the previous screen
                 } else {
-                    Toast.makeText(this, "Failed to book", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "O agendamento falhou", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                Toast.makeText(this, "Please select a sport", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Por favor, selecione um esporte", Toast.LENGTH_SHORT).show()
             }
         }
     }

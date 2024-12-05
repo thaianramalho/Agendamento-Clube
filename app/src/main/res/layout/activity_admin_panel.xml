@@ -9,11 +9,11 @@
         android:id="@+id/registerSportButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register Sport" />
+        android:text="Registrar Esporte" />
 
     <Button
         android:id="@+id/viewBookingsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View Bookings" />
+        android:text="Visualizar Agendamentos" />
 </LinearLayout>

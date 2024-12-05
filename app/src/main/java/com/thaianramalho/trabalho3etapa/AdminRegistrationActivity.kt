@@ -2,6 +2,7 @@ package com.thaianramalho.trabalho3etapa
 
 import android.content.ContentValues
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -28,6 +29,11 @@ class AdminRegistrationActivity : AppCompatActivity() {
             val password = passwordEditText.text.toString()
 
             if (name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    Toast.makeText(this, "Email inválido", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+
                 val db = dbHelper.writableDatabase
                 val values = ContentValues().apply {
                     put("name", name)
@@ -36,12 +42,12 @@ class AdminRegistrationActivity : AppCompatActivity() {
                 }
                 val newRowId = db.insert("admin", null, values)
                 if (newRowId != -1L) {
-                    Toast.makeText(this, "Admin registered successfully", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Administrador registrado com sucesso", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this, "Failed to register admin", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Falha ao registrar administrador", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT).show()
             }
         }
     }

@@ -2,6 +2,7 @@ package com.thaianramalho.trabalho3etapa
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -26,6 +27,11 @@ class LoginActivity : AppCompatActivity() {
             val password = passwordEditText.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    Toast.makeText(this, "Email inválido", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+
                 val db = dbHelper.readableDatabase
 
                 // Check if admin
@@ -43,7 +49,7 @@ class LoginActivity : AppCompatActivity() {
                     // Admin login successful
                     val intent = Intent(this, AdminPanelActivity::class.java)
                     startActivity(intent)
-                    Toast.makeText(this, "Admin login successful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Login de administrador bem-sucedido", Toast.LENGTH_SHORT).show()
                 } else {
                     // Check if user
                     val userCursor = db.query(
@@ -60,15 +66,15 @@ class LoginActivity : AppCompatActivity() {
                         // User login successful
                         val intent = Intent(this, UserPanelActivity::class.java)
                         startActivity(intent)
-                        Toast.makeText(this, "User login successful", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Login de usuário bem-sucedido", Toast.LENGTH_SHORT).show()
                     } else {
-                        Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Credenciais inválidas", Toast.LENGTH_SHORT).show()
                     }
                     userCursor.close()
                 }
                 adminCursor.close()
             } else {
-                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT).show()
             }
         }
     }

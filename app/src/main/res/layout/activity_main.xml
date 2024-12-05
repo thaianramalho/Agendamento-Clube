@@ -9,17 +9,17 @@
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:text="Entrar" />
 
     <Button
         android:id="@+id/adminRegistrationButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register Admin" />
+        android:text="Registrar Administrador" />
 
     <Button
         android:id="@+id/userRegistrationButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register User" />
+        android:text="Registrar Usuário" />
 </LinearLayout>
